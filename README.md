@@ -40,21 +40,12 @@
    ```bash
    pip install -r requirements.txt
    ```
-
 6. Настройте переменные окружения (см. `.env.example`)
-7. Инициализируйте базу данных:
-   ```bash
-   python init_db.py
-   ```
-8. Запустите приложение:
+
+7. Запустите приложение:
    ```bash
    uvicorn app.main:app --reload
    ```
-
-## Запуск с Docker
-```bash
-docker-compose up -d
-```
 
 ## API эндпоинты
 - `POST /api/v1/calls/` - Создать новый звонок
@@ -66,4 +57,10 @@ docker-compose up -d
 Фоновая обработка осуществляется с помощью Celery. Запустите воркер с помощью:
 ```bash
 celery -A app.worker.tasks worker --loglevel=info
+```
+
+
+## Запуск с Docker
+```bash
+docker-compose up -d
 ```
